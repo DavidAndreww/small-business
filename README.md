@@ -66,3 +66,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+<!-- API KEY -->
+<!-- AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI -->
+
+<!-- 
+EXAMPLE:
+
+https://developers.google.com/maps/documentation/javascript/adding-a-google-map
+
+ -->

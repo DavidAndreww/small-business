@@ -5,10 +5,10 @@ import Typography from '@material-ui/core/Typography'
 
 const Login = () => {
   return (
-    <form>
-      <TextField variant="outlined" label="Username:" />
+    <form className="login-component">
+      <TextField className="login-input" variant="outlined" label="Username:" />
       <br />
-      <TextField variant="outlined" label="Password" />
+      <TextField className="login-input" variant="outlined" label="Password" type="password" />
       <br />
       <Button color="primary" variant="contained" type="submit">
         Login

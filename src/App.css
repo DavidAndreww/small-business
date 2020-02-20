@@ -1,0 +1,9 @@
+.login-component {
+  text-align: center;
+}
+.login-component .login-input {
+  margin: .5em 0em;
+}
+.login-component button {
+  margin: .5em 0em;
+}
