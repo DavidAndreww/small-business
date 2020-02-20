@@ -22,8 +22,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const NavBar = () => {
+const NavBar = (props) => {
   const classes = useStyles();
+  console.log(props.loggedIn)
 
   return (
     <div className={classes.root}>
@@ -37,11 +38,11 @@ const NavBar = () => {
           >
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Austin Small Business
+            Austin Small Business 
           </Typography>
-          <Button>Listings</Button>
-          <Button>Add</Button>
-          <Button>Logout</Button>
+          <Button color="inherit">Listings</Button>
+          {props.loggedIn ? <Button color="inherit">Add</Button> : null }
+          {props.loggedIn ? <Button color="inherit">Logout</Button> : null}
         </Toolbar>
       </AppBar>
     </div>
