@@ -39,6 +39,9 @@ const NavBar = () => {
           <Typography variant="h6" className={classes.title}>
             Austin Small Business
           </Typography>
+          <Button>Listings</Button>
+          <Button>Add</Button>
+          <Button>Logout</Button>
         </Toolbar>
       </AppBar>
     </div>

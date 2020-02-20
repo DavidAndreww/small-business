@@ -1,5 +1,7 @@
 const state = {
-  loggedIn: false
+  loggedIn: false, 
+  listings: [],
+  map: null
 }
 
 export default state;
