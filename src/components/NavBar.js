@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -40,7 +41,7 @@ const NavBar = (props) => {
           <Typography variant="h6" className={classes.title}>
             Austin Small Business 
           </Typography>
-          <Button color="inherit">Listings</Button>
+          <Link to='/listings'><Button color="inherit">Listings</Button></Link>
           {props.loggedIn ? <Button color="inherit">Add</Button> : null }
           {props.loggedIn ? <Button color="inherit">Logout</Button> : null}
         </Toolbar>
