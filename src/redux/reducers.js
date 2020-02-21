@@ -11,4 +11,16 @@ const loggedIn = (state = false, action) => {
   }
 };
 
-export default combineReducers({ loggedIn });
+const isGuest = (state = false, action) => {
+  switch (action.type){
+    case 'GUEST':
+      console.log(!state.isGuest)
+    return !state.isGuest
+    default:
+      return state
+  }
+}
+
+
+
+export default combineReducers({ loggedIn, isGuest });

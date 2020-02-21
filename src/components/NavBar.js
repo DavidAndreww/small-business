@@ -25,7 +25,6 @@ const useStyles = makeStyles(theme => ({
 
 const NavBar = (props) => {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -40,7 +39,8 @@ const NavBar = (props) => {
           <Typography variant="h6" className={classes.title}>
             Austin Small Business 
           </Typography>
-          <Link className="link" to='/listings'><Button color="inherit">Listings</Button></Link>
+          {props.isGuest || props.loggedIn ? <Link className="link" to='/listings'><Button color="inherit">Listings</Button></Link> : null }
+          
           {props.loggedIn ? <Button color="inherit">Add</Button> : null }
           {props.loggedIn ? <Button color="inherit" onClick={()=>props.logOut()}>Logout</Button> : null}
         </Toolbar>

@@ -24,7 +24,13 @@ const logIn = () => {
   }
 }
 
-export { fetchBusinesses, logIn, logOut }
+const logInGuest = () => {
+  return {
+    type: 'GUEST'
+  }
+}
+
+export { fetchBusinesses, logIn, logOut, logInGuest }
 
 
 //  AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI

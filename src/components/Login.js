@@ -15,7 +15,7 @@ const Login = (props) => {
         Login
       </Button>
       <Typography>- OR -</Typography>
-      <Button color="primary" variant="contained" type="submit">
+      <Button color="primary" variant="contained" onClick={()=>props.logInGuest()}>
         Continue as Guest
       </Button>
     </form>
