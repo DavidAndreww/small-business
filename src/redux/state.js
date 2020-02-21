@@ -1,5 +1,5 @@
 const state = {
-  loggedIn: true, 
+  loggedIn: false, 
   listings: [],
   map: null
 }

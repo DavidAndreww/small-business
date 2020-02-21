@@ -4,14 +4,14 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Login = (props) => {
   return (
     <form className="login-component">
       <TextField className="login-input" variant="outlined" label="Username:" />
       <br />
       <TextField className="login-input" variant="outlined" label="Password" type="password" />
       <br />
-      <Button color="primary" variant="contained" type="submit">
+      <Button color="primary" variant="contained" onClick={()=>props.logIn()}>
         Login
       </Button>
       <Typography>- OR -</Typography>

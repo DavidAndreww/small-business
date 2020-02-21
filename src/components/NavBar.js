@@ -40,7 +40,7 @@ const NavBar = (props) => {
           <Typography variant="h6" className={classes.title}>
             Austin Small Business 
           </Typography>
-          <Link to='/listings'><Button color="inherit">Listings</Button></Link>
+          <Link className="link" to='/listings'><Button color="inherit">Listings</Button></Link>
           {props.loggedIn ? <Button color="inherit">Add</Button> : null }
           {props.loggedIn ? <Button color="inherit" onClick={()=>props.logOut()}>Logout</Button> : null}
         </Toolbar>

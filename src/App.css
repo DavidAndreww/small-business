@@ -7,3 +7,16 @@
 .login-component button {
   margin: .5em 0em;
 }
+.link:link {
+  text-decoration: none;
+  color: white;
+}
+.link:visited {
+  color: white
+}
+.link:active {
+  color:white
+}
+.link:hover {
+  color:white
+}
