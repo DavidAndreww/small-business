@@ -25,7 +25,6 @@ const useStyles = makeStyles(theme => ({
 
 const NavBar = (props) => {
   const classes = useStyles();
-  console.log(props.loggedIn)
 
   return (
     <div className={classes.root}>
@@ -43,7 +42,7 @@ const NavBar = (props) => {
           </Typography>
           <Link to='/listings'><Button color="inherit">Listings</Button></Link>
           {props.loggedIn ? <Button color="inherit">Add</Button> : null }
-          {props.loggedIn ? <Button color="inherit">Logout</Button> : null}
+          {props.loggedIn ? <Button color="inherit" onClick={()=>props.logOut()}>Logout</Button> : null}
         </Toolbar>
       </AppBar>
     </div>

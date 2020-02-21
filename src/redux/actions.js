@@ -12,7 +12,19 @@ const fetchBusinesses = () => {
   }
 }
 
-export { fetchBusinesses }
+const logOut = () =>{
+  return {
+    type: 'LOG_OUT'
+  }
+}
+
+const logIn = () => {
+  return {
+    type: 'LOG_IN'
+  }
+}
+
+export { fetchBusinesses, logIn, logOut }
 
 
 //  AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI
