@@ -16,11 +16,11 @@ const Listings = props => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Description</TableCell>
-            <TableCell>Hours</TableCell>
-            <TableCell>Address</TableCell>
-            {props.loggedIn ? <TableCell>Delete</TableCell> : null}
+            <TableCell><b>Name</b></TableCell>
+            <TableCell><b>Description</b></TableCell>
+            <TableCell><b>Hours</b></TableCell>
+            <TableCell><b>Address</b></TableCell>
+            {props.loggedIn ? <TableCell><b>Delete</b></TableCell> : null}
           </TableRow>
         </TableHead>
         <TableBody>
