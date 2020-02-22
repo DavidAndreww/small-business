@@ -69,7 +69,6 @@ class AddBusiness extends React.Component {
         />
         <br />
         <Button
-          // onClick={() => this.props.addBiz(this.state.name)}
           type="submit"
           variant="contained"
           color="primary"

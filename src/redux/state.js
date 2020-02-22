@@ -16,7 +16,7 @@ const state = {
     {
       name: 'North Austin Rock Gym',
       description: 'NARG offers some of the best indoor bouldering angles in the country, including a 24-foot bouldering wall. Their experienced professional instructors are available to help climbers of all ages, from beginners to advanced.',
-      addres: ' 8300 N Lamar Blvd Suite #102b, Austin, TX 78753',
+      address: ' 8300 N Lamar Blvd Suite #102b, Austin, TX 78753',
       hours: '11 AM - 11 PM'
     },
     {
