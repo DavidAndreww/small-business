@@ -29,14 +29,16 @@ class AddBusiness extends React.Component {
       name: "",
       address: "",
       description: "",
-      hours: ""
+      hours: "",
     });
+    alert('Sucessfully added business!')
   };
 
   render() {
     return (
       <form className="add-business-component" onSubmit={this.handleSubmit}>
         <TextField
+          required
           label="Business Name"
           value={this.state.name}
           onChange={this.handleFormChange}
@@ -45,6 +47,7 @@ class AddBusiness extends React.Component {
         />
         <br />
         <TextField
+          required
           label="Address"
           value={this.state.address}
           onChange={this.handleFormChange}
@@ -53,6 +56,7 @@ class AddBusiness extends React.Component {
         />
         <br />
         <TextField
+          required
           label="Hours (ex. 8AM - 9PM)"
           value={this.state.hours}
           onChange={this.handleFormChange}
@@ -61,6 +65,7 @@ class AddBusiness extends React.Component {
         />
         <br />
         <TextField
+          required
           label="Description"
           value={this.state.description}
           onChange={this.handleFormChange}
