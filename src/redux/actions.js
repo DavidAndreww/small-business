@@ -20,7 +20,7 @@ const logOut = () =>{
 
 const logIn = () => {
   return {
-    type: 'LOG_IN'
+    type: 'LOG_IN',
   }
 }
 
@@ -30,7 +30,14 @@ const logInGuest = () => {
   }
 }
 
-export { fetchBusinesses, logIn, logOut, logInGuest }
+const deleteBiz = (name) =>{
+  return {
+    type: 'DELETE_BIZ',
+    value: name
+  }
+}
+
+export { fetchBusinesses, logIn, logOut, logInGuest, deleteBiz }
 
 
 //  AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI

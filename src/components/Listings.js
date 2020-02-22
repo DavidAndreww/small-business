@@ -1,48 +1,49 @@
-import React from 'react'
+import React from "react";
 import {
   Container,
   Table,
   TableBody,
   TableCell,
   TableHead,
-  TableRow
-} from '@material-ui/core'
-import DeleteIcon from '@material-ui/icons/Delete'
+  TableRow,
+  Button
+} from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
 
-const Listings = () => {
+const Listings = props => {
   return (
     <Container maxWidth="lg" className="listings">
-            
-            
-            <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Description</TableCell>
-                        <TableCell>Hours</TableCell>
-                        <TableCell>Address</TableCell>
-                        {/* <TableCell>Delete</TableCell> */}
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                {/* {props.cars.map((car, idx) => ( */}
-                    <TableRow>
-                        <TableCell component="th" scope="row">
-                            {/* {car.id} */}
-                        </TableCell>
-                        <TableCell></TableCell>
-                        <TableCell></TableCell>
-                        <TableCell></TableCell>
-                        <TableCell></TableCell>
-                        <TableCell>
-                            {/* <DeleteIcon/> */}
-                        </TableCell>
-                    </TableRow>
-                {/* ))} */}
-                </TableBody>
-            </Table>
-        </Container>
-  )
-}
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Name</TableCell>
+            <TableCell>Description</TableCell>
+            <TableCell>Hours</TableCell>
+            <TableCell>Address</TableCell>
+            {props.loggedIn ? <TableCell>Delete</TableCell> : null}
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {props.listings.map((obj, idx) => (
+            <TableRow key={obj.name}>
+              <TableCell>{obj.name}</TableCell>
+              <TableCell>{obj.description}</TableCell>
+              <TableCell>{obj.hours}</TableCell>
+              <TableCell>{"GIVE ADDRESS, PLZ"}</TableCell>
+              {props.loggedIn ? (
+                <TableCell>
+                  <Button><DeleteIcon
+                  onClick={() => props.deleteBiz(obj.name)}
+                    className="delete-icon"
+                  /></Button>
+                </TableCell>
+              ) : null}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </Container>
+  );
+};
 
 export default Listings;

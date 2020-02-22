@@ -20,3 +20,6 @@
 .link:hover {
   color:white
 }
+.delete-icon {
+  color: red;
+}
