@@ -40,8 +40,7 @@ const NavBar = (props) => {
             Austin Small Business 
           </Typography>
           {props.isGuest || props.loggedIn ? <Link className="link" to='/listings'><Button color="inherit">Listings</Button></Link> : null }
-          
-          {props.loggedIn ? <Button color="inherit">Add</Button> : null }
+          {props.loggedIn ? <Link className="link" to='/add'><Button color="inherit">Add</Button></Link> : null }
           {props.loggedIn ? <Button color="inherit" onClick={()=>props.logOut()}>Logout</Button> : null}
         </Toolbar>
       </AppBar>

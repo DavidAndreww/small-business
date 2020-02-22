@@ -30,10 +30,10 @@ const logInGuest = () => {
   }
 }
 
-const deleteBiz = (name) =>{
+const deleteBiz = (business) =>{
   return {
     type: 'DELETE_BIZ',
-    value: name
+    value: business
   }
 }
 
