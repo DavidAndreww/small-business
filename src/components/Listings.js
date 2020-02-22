@@ -29,7 +29,7 @@ const Listings = props => {
               <TableCell>{obj.name}</TableCell>
               <TableCell>{obj.description}</TableCell>
               <TableCell>{obj.hours}</TableCell>
-              <TableCell>{"GIVE ADDRESS, PLZ"}</TableCell>
+              <TableCell>{obj.address}</TableCell>
               {props.loggedIn ? (
                 <TableCell>
                   <Button><DeleteIcon
