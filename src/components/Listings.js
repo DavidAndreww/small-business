@@ -18,7 +18,9 @@ class Listings extends React.Component {
       this.props.logIn();
     }
     if(this.props.isGuest === true){
+      // why won't this delete cookie? user can log in, log out, log in as guest, and still have acceess to 'add' path. por que?
       delete document.cookie
+      // document.cookie = ''
     }
   }
 
