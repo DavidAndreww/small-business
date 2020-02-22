@@ -9,35 +9,59 @@ class AddBusiness extends React.Component {
     address: ""
   };
 
-  // business = {
-  //   name: this.state.name,
-  //   description: this.state.description,
-  //   hours: this.state.hours,
-  //   address: this.state.address
-  // };
-
-  handleInputChange = e => {
+  handleFormChange = e => {
     this.setState({ [e.target.id]: e.target.value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const newBiz = {
+      name: this.state.name,
+      address: this.state.address,
+      hours: this.state.hours,
+      description: this.state.description
+    };
+    this.props.addBiz(newBiz);
   };
 
   render() {
     return (
-      <form className="add-business-component">
-        <TextField id="name" variant="outlined" label="Business Name" />
-        <br />
-        <TextField id="address" variant="outlined" label="Address" />
-        <br />
+      <form className="add-business-component" onSubmit={this.handleSubmit}>
         <TextField
-          id="hours"
+          label="Business Name"
+          value={this.state.name}
+          onChange={this.handleFormChange}
+          id="name"
           variant="outlined"
-          label="Hours (ex. 8AM - 9PM)"
         />
         <br />
-        <TextField id="description" variant="outlined" label="Description" />
+        <TextField
+          label="Address"
+          value={this.state.address}
+          onChange={this.handleFormChange}
+          id="address"
+          variant="outlined"
+        />
+        <br />
+        <TextField
+          label="Hours (ex. 8AM - 9PM)"
+          value={this.state.hours}
+          onChange={this.handleFormChange}
+          id="hours"
+          variant="outlined"
+        />
+        <br />
+        <TextField
+          label="Description"
+          value={this.state.description}
+          onChange={this.handleFormChange}
+          id="description"
+          variant="outlined"
+        />
         <br />
         <Button
-          onClick={() => this.props.addBiz(this.business)}
-          // type="submit"
+          // onClick={() => this.props.addBiz(this.state.name)}
+          type="submit"
           variant="contained"
           color="primary"
         >

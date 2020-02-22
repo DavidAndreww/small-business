@@ -3,7 +3,6 @@ import { combineReducers } from "redux";
 const loggedIn = (state = false, action) => {
   switch (action.type) {
     case "LOG_IN":
-      console.log("LOGIN REDUCER HIT");
       return (state = true);
     case "LOG_OUT":
       return (state = false);
