@@ -6,21 +6,25 @@ import { Link } from "react-router-dom";
 
 const Login = props => {
 
-  // const validateAuth = () => {
-  //   document.cookie = `loggedIn=true;max-age=60*1000`;
-  //   window.location.replace('/')
-  // };
+  const validateAuth = e => {
+    e.preventDefault();
+    document.cookie = `loggedIn=true;max-age=30*1000`;
+    console.log("hi");
+    window.location.replace('/listings')
+  };
 
   return (
     <div className="login-component">
-      <form>
+      <form onSubmit={validateAuth}>
         <TextField
+          required
           className="login-input"
           variant="outlined"
           label="Username"
         />
         <br />
         <TextField
+          required
           className="login-input"
           variant="outlined"
           label="Password"
@@ -28,17 +32,17 @@ const Login = props => {
           autoComplete="current-password"
         />
         <br />
-        <Link className="link" to="/listings">
-          <Button
-            color="primary"
-            variant="contained"
-            type="submit"
-            // onClick={()=>props.logIn()}
-            onClick={()=>props.logIn()}
-          >
+        <Button
+          color="primary"
+          variant="contained"
+          type="submit"
+          // onClick={()=>props.logIn()}
+          // onClick={()=>validateAuth()}
+        >
+          {/* <Link className="link" to="/listings"> */}
             Login
-          </Button>
-        </Link>
+          {/* </Link> */}
+        </Button>
         <Typography>- OR -</Typography>
       </form>
       <Link className="link" to="/listings">

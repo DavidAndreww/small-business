@@ -23,3 +23,9 @@
 .delete-icon {
   color: red;
 }
+.details-component {
+  width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid blue;
+}
