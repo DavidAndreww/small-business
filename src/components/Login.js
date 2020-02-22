@@ -25,7 +25,7 @@ const Login = props => {
           variant="outlined"
           label="Password"
           type="password"
-          autocomplete="current-password"
+          autoComplete="current-password"
         />
         <br />
         <Link className="link" to="/listings">

@@ -24,7 +24,6 @@ const isGuest = (state = false, action) => {
 const listings = (state = [], action) => {
   switch (action.type) {
     case 'ADD_BIZ':
-      console.log(action.value)
       return [ ...state, action.value ]
     case "DELETE_BIZ":
       let newState = [ ...state ];

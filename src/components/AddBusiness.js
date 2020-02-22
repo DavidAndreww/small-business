@@ -6,7 +6,8 @@ class AddBusiness extends React.Component {
     name: "",
     description: "",
     hours: "",
-    address: ""
+    address: "",
+    success: false
   };
 
   handleFormChange = e => {
@@ -22,6 +23,14 @@ class AddBusiness extends React.Component {
       description: this.state.description
     };
     this.props.addBiz(newBiz);
+    //e.currentTarget.reset()
+    // I don't think this breaks single source of truth, but I still feel it's not best practice...
+    this.setState({
+      name: "",
+      address: "",
+      description: "",
+      hours: ""
+    });
   };
 
   render() {
@@ -65,7 +74,7 @@ class AddBusiness extends React.Component {
           variant="contained"
           color="primary"
         >
-          ADD BIZ
+          Add Biz
         </Button>
       </form>
     );
