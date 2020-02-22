@@ -38,11 +38,6 @@ const NavBar = props => {
           <Typography variant="h6" className={classes.title}>
             Austin Small Business
           </Typography>
-          {props.isGuest ? (
-            <Link className="link" to="/">
-              <Button color="inherit">Log In</Button>
-            </Link>
-          ) : null}
           {props.isGuest || props.loggedIn ? (
             <Link className="link" to="/listings">
               <Button color="inherit">Listings</Button>
@@ -54,9 +49,14 @@ const NavBar = props => {
             </Link>
           ) : null}
           {props.loggedIn ? (
-            <Button color="inherit" onClick={() => props.logOut()}>
+            <Link className="link" to="/"><Button color="inherit" onClick={() => props.logOut()}>
               Logout
-            </Button>
+            </Button></Link>
+          ) : null}
+          {props.isGuest ? (
+            <Link className="link" to="/">
+              <Button onClick={()=>props.logOutGuest()} color="inherit">Log In</Button>
+            </Link>
           ) : null}
         </Toolbar>
       </AppBar>

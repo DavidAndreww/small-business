@@ -9,6 +9,7 @@ import {
   Button
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { Link } from 'react-router-dom'
 
 const Listings = props => {
   return (
@@ -26,7 +27,7 @@ const Listings = props => {
         <TableBody>
           {props.listings.map((obj, idx) => (
             <TableRow key={obj.name}>
-              <TableCell>{obj.name}</TableCell>
+              <TableCell><Link to={`/details/${obj.name}`}>{obj.name}</Link></TableCell>
               <TableCell>{obj.description}</TableCell>
               <TableCell>{obj.hours}</TableCell>
               <TableCell>{obj.address}</TableCell>

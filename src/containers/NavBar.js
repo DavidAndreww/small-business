@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import NavBar from "../components/NavBar";
-import { logOut } from "../redux/actions";
+import { logOut, logOutGuest } from "../redux/actions";
 
 const mapStateToProps = state => {
   return {
@@ -11,7 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    logOut: () => dispatch(logOut())
+    logOut: () => dispatch(logOut()),
+    logOutGuest: () => dispatch(logOutGuest())
   };
 };
 
