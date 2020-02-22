@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
 import Login from '../components/Login';
-import { logIn, logInGuest } from '../redux/actions'
+import { logInGuest } from '../redux/actions'
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logIn: () => dispatch(logIn()),
-    logInGuest: () => dispatch(logInGuest()),
+    logInGuest: () => dispatch(logInGuest())
   }
 }
 
