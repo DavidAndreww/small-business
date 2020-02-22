@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router";
 import cookie from "cookie";
 import Login from "./containers/Login";
 import Listings from "./containers/Listings";
+import AddBusiness from './containers/AddBusiness';
 import Details from "./components/Details";
 
 // const checkAuth = () => {
@@ -26,6 +27,7 @@ const Router = () => {
       <Route exact path="/" component={Login} />
       <Route path="/listings" component={Listings} />
       <Route path="/details/:id" component={Details} />
+      <Route path='/add' component={AddBusiness}/>
     </Switch>
   );
 };

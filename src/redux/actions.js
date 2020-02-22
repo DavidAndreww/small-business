@@ -37,7 +37,14 @@ const deleteBiz = (name) =>{
   }
 }
 
-export { fetchBusinesses, logIn, logOut, logInGuest, deleteBiz }
+const addBiz = (business) => {
+  return {
+    type: 'ADD_BIZ',
+    value: business
+  }
+}
+
+export { fetchBusinesses, logIn, logOut, logInGuest, deleteBiz, addBiz }
 
 
 //  AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI
