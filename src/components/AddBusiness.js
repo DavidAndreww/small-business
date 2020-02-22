@@ -9,26 +9,35 @@ class AddBusiness extends React.Component {
     address: ""
   };
 
-  business = {
-    name: this.state.name,
-    description: this.state.description,
-    hours: this.state.hours,
-    address: this.state.address
+  // business = {
+  //   name: this.state.name,
+  //   description: this.state.description,
+  //   hours: this.state.hours,
+  //   address: this.state.address
+  // };
+
+  handleInputChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
   };
 
   render() {
     return (
       <form className="add-business-component">
-        <TextField variant="outlined" label="Business Name" />
+        <TextField id="name" variant="outlined" label="Business Name" />
         <br />
-        <TextField variant="outlined" label="Address" />
+        <TextField id="address" variant="outlined" label="Address" />
         <br />
-        <TextField variant="outlined" label="Hours (ex. 8AM - 9PM)" />
+        <TextField
+          id="hours"
+          variant="outlined"
+          label="Hours (ex. 8AM - 9PM)"
+        />
         <br />
-        <TextField variant="outlined" label="Description" />
+        <TextField id="description" variant="outlined" label="Description" />
         <br />
         <Button
           onClick={() => this.props.addBiz(this.business)}
+          // type="submit"
           variant="contained"
           color="primary"
         >
