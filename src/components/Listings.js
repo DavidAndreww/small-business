@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom'
 class Listings extends React.Component {
 
   componentDidMount(){
+    if(this.props.isGuest === false)
     this.props.logIn()
   }
   render(){

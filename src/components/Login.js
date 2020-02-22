@@ -9,7 +9,6 @@ const Login = props => {
   const validateAuth = e => {
     e.preventDefault();
     document.cookie = `loggedIn=true;max-age=30*1000`;
-    console.log("hi");
     window.location.replace('/listings')
   };
 

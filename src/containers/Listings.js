@@ -5,7 +5,8 @@ import { deleteBiz, logIn } from '../redux/actions';
 const mapStateToProps = (state) => {
   return {
     loggedIn: state.loggedIn,
-    listings: state.listings
+    listings: state.listings,
+    isGuest: state.isGuest
   }
 }
 
