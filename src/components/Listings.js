@@ -12,20 +12,19 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import { Link } from "react-router-dom";
 
 class Listings extends React.Component {
-
   componentDidMount() {
     if (this.props.isGuest === false) {
       this.props.logIn();
     }
-    if(this.props.isGuest === true){
+    if (this.props.isGuest === true) {
       // why won't this delete cookie? user can log in, log out, log in as guest, and still have acceess to 'add' path. por que?
-      delete document.cookie
+      delete document.cookie;
       // document.cookie = ''
     }
   }
 
   render() {
-    console.log(this.props.isGuest)
+    console.log(this.props.isGuest);
     return (
       <Container maxWidth="lg" className="listings">
         <Table>
