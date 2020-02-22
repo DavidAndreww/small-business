@@ -13,9 +13,10 @@ const loggedIn = (state = false, action) => {
 
 const isGuest = (state = false, action) => {
   switch (action.type) {
-    case "GUEST":
-      console.log(!state.isGuest);
-      return !state.isGuest;
+    case "LOG_IN_GUEST":
+      return (state = true);
+    case "LOG_OUT_GUEST":
+      return (state = false);
     default:
       return state;
   }
@@ -23,11 +24,11 @@ const isGuest = (state = false, action) => {
 
 const listings = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_BIZ':
-      return [ ...state, action.value ]
+    case "ADD_BIZ":
+      return [...state, action.value];
     case "DELETE_BIZ":
-      let newState = [ ...state ];
-      let result = newState.filter(biz => biz.name !== action.value )
+      let newState = [...state];
+      let result = newState.filter(biz => biz.name !== action.value);
       return result;
     default:
       return state;

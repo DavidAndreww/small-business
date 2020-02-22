@@ -1,8 +1,13 @@
 import React from 'react';
 
-const Details = () => {
+const Details = (props) => {
   return (
-    <p>DETAILS PAGE</p>
+    <div className="details-component">
+      <h1>Business Name</h1>
+      <p>Business Description</p>
+      <p>business hours</p>
+      <p>business address</p>
+    </div>
   )
 }
 
