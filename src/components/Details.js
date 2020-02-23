@@ -1,4 +1,5 @@
 import React from 'react';
+import { ListingsMap } from './ListingsMap';
 
 const Details = (props) => {
   let name = props.match.params.name
@@ -11,6 +12,7 @@ const Details = (props) => {
       <p>{business.address}</p>
       <p>{business.hours}</p>
       <p>{business.description}</p>
+      <ListingsMap />
     </div>
   )
 }

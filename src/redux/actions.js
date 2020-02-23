@@ -59,6 +59,6 @@ export { fetchBusinesses, logIn, logOut, logInGuest, logOutGuest, deleteBiz, add
 
 // https://levelup.gitconnected.com/google-map-react-beginners-guide-85bb1a94b04a
 
+// https://www.youtube.com/watch?v=xIYAV6IP4gA
 
-// async defer
-//     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI&callback=initMap"
+
