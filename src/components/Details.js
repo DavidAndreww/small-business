@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListingsMap } from './ListingsMap';
+import ListingsMap from './ListingsMap';
 
 const Details = (props) => {
   let name = props.match.params.name

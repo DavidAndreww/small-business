@@ -6,35 +6,40 @@ import {
   Marker
 } from "react-google-maps";
 
+
+
 function Map() {
   return (
     <GoogleMap
       defaultZoom={10}
       defaultCenter={{ lat: 30.267153, lng: -97.743057 }}
     >
-      <Marker position={{lat: 30.267153, lng: -97.743057}}/>
+      <Marker position={{ lat: 30.267153, lng: -97.743057 }} />
     </GoogleMap>
   );
 }
-
 
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 const key = "AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI";
 
-export const ListingsMap = () => {
-  return (
-    <div style={{ width: "100%", height: "50vh" }}>
-      <WrappedMap
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${key}`}
-        loadingElement={<div style={{ height: "100%" }} />}
-        containerElement={<div style={{ height: "100%" }} />}
-        mapElement={<div style={{ height: "100%" }} />}
-      />
-    </div>
-  );
+
+ class ListingsMap extends React.Component {
+  render() {
+    return (
+      <div style={{ width: "100%", height: "50vh" }}>
+        <WrappedMap
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${key}`}
+          loadingElement={<div style={{ height: "100%" }} />}
+          containerElement={<div style={{ height: "100%" }} />}
+          mapElement={<div style={{ height: "100%" }} />}
+        />
+      </div>
+    );
+  }
 };
 
+export default ListingsMap;
 
 // var geocoder;
 // var map;
@@ -49,7 +54,7 @@ export const ListingsMap = () => {
 // }
 
 // function codeAddress() {
-//   var address = document.getElementById('address').value;
+//   var address = passing in address from business object
 //   geocoder.geocode( { 'address': address}, function(results, status) {
 //     if (status == 'OK') {
 //       map.setCenter(results[0].geometry.location);
@@ -63,10 +68,4 @@ export const ListingsMap = () => {
 //   });
 // }
 
-// <body onload="initialize()">
-// <div id="map" style="width: 320px; height: 480px;"></div>
-// <div>
-//   <input id="address" type="textbox" value="Sydney, NSW">
-//   <input type="button" value="Encode" onclick="codeAddress()">
-// </div>
-// </body>
+
