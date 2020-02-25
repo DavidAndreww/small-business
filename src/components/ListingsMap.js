@@ -6,31 +6,6 @@ import {
   Marker
 } from "react-google-maps";
 
-// const key = "AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI";
-
-// let url = `https://maps.googleapis.com/maps/api/geocode/json?address=2900SunridgeDrive,Austin,TX,78741&key=${key}`;
-
-// fetch(url)
-//   .then(res => res.json())
-//   .then(response => {
-//     let lat = response.results[0].geometry.location.lat;
-//     let lng = response.results[0].geometry.location.lng;
-//     console.log(lat, lng);
-//   });
-
-// function Map() {
-//   return (
-//     <GoogleMap
-//       defaultZoom={10}
-//       defaultCenter={{ lat: 30.267153, lng: -97.743057 }}
-//     >
-//       <Marker position={{ lat: 30.267153, lng: -97.743057 }} />
-//     </GoogleMap>
-//   );
-// }
-
-// const WrappedMap = withScriptjs(withGoogleMap(Map));
-
 class ListingsMap extends React.Component {
   state = {
     lat: "",
@@ -38,7 +13,7 @@ class ListingsMap extends React.Component {
   };
 
   componentDidMount = () => {
-    const address = '2900 Sunridge Drive, Austin, TX 78741'
+    const address = "2900 Sunridge Drive, Austin, TX 78741";
     const key = "AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI";
     let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${key}`;
 
@@ -47,7 +22,7 @@ class ListingsMap extends React.Component {
       .then(response => {
         let lat = response.results[0].geometry.location.lat;
         let lng = response.results[0].geometry.location.lng;
-        this.setState({lat, lng})
+        this.setState({ lat, lng });
         console.log(this.state.lat, this.state.lng);
       });
   };
