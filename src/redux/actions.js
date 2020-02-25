@@ -51,14 +51,3 @@ const addBiz = (business) => {
 }
 
 export { fetchBusinesses, logIn, logOut, logInGuest, logOutGuest, deleteBiz, addBiz }
-
-
-//  AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI
-
-// https://developers.google.com/maps/documentation/javascript/adding-a-google-map
-
-// https://levelup.gitconnected.com/google-map-react-beginners-guide-85bb1a94b04a
-
-// https://www.youtube.com/watch?v=xIYAV6IP4gA
-
-

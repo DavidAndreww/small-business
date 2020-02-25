@@ -12,6 +12,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import { Link } from "react-router-dom";
 
 class Listings extends React.Component {
+  // if logged in with username and password, changes state to logged in to allow for proper links in navbar to be displayed
   componentDidMount() {
     if (this.props.isGuest === false) {
       this.props.logIn();
@@ -24,7 +25,6 @@ class Listings extends React.Component {
   }
 
   render() {
-    console.log(this.props.isGuest);
     return (
       <Container maxWidth="lg" className="listings">
         <Table>
@@ -42,6 +42,7 @@ class Listings extends React.Component {
               <TableCell>
                 <b>Address</b>
               </TableCell>
+              {/*if loggedIn, display delete button COLUMN */}
               {this.props.loggedIn ? (
                 <TableCell>
                   <b>Delete</b>
@@ -58,6 +59,7 @@ class Listings extends React.Component {
                 <TableCell>{obj.description}</TableCell>
                 <TableCell>{obj.hours}</TableCell>
                 <TableCell>{obj.address}</TableCell>
+                {/* if loggedIn, display delete BUTTON for each business */}
                 {this.props.loggedIn ? (
                   <TableCell>
                     <Button>

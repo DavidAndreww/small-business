@@ -10,10 +10,13 @@ class AddBusiness extends React.Component {
     success: false
   };
 
+  // updates state keys as user enters text in <TextField />
   handleFormChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
 
+  // 1: creates new business object using values from state keys
+  // 2: calls addBiz() action to update listings state
   handleSubmit = e => {
     e.preventDefault();
     const newBiz = {
