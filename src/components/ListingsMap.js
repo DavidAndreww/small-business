@@ -13,7 +13,7 @@ class ListingsMap extends React.Component {
   };
 
   componentDidMount = () => {
-    const address = "2900 Sunridge Drive, Austin, TX 78741";
+    const address = `${this.props.address}`;
     const key = "AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI";
     let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${key}`;
 
