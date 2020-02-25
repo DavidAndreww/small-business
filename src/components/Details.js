@@ -5,7 +5,6 @@ const Details = (props) => {
   let name = props.match.params.name
   console.log(name)
   let business = props.listings.find(biz => biz.name === name)
-  console.log(business)
   return (
     <div className="details-component">
       <h1>{business.name}</h1>
