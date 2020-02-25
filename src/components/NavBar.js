@@ -37,22 +37,26 @@ const NavBar = props => {
           ></IconButton>
           <Typography variant="h6" className={classes.title}>
             Austin Small Business
-          </Typography>
+          </Typography>\
+          {/* if user logs in or continues as guest, displays LISTINGS BUTTON */}
           {props.isGuest || props.loggedIn ? (
             <Link className="link" to="/listings">
               <Button color="inherit">Listings</Button>
             </Link>
           ) : null}
+          {/* if user logs in, displays ADD BUTTON */}
           {props.loggedIn ? (
             <Link className="link" to="/add">
               <Button color="inherit">Add</Button>
             </Link>
           ) : null}
+          {/* if user logs in, dispays LOGOUT BUTTON */}
           {props.loggedIn ? (
             <Link className="link" to="/"><Button color="inherit" onClick={() => props.logOut()}>
               Logout
             </Button></Link>
           ) : null}
+          {/* if user logs in as guest, displays LOG IN BUTTON */}
           {props.isGuest ? (
             <Link className="link" to="/">
               <Button onClick={()=>props.logOutGuest()} color="inherit">Log In</Button>
