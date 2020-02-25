@@ -37,7 +37,7 @@ const NavBar = props => {
           ></IconButton>
           <Typography variant="h6" className={classes.title}>
             Austin Small Business
-          </Typography>\
+          </Typography>
           {/* if user logs in or continues as guest, displays LISTINGS BUTTON */}
           {props.isGuest || props.loggedIn ? (
             <Link className="link" to="/listings">
