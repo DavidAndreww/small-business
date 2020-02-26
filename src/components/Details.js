@@ -1,5 +1,5 @@
 import React from 'react';
-import ListingsMap from './ListingsMap';
+import DetailsMap from '../containers/DetailsMap';
 
 const Details = (props) => {
   // gets business name from parameters to find proper business object in listings array
@@ -12,7 +12,7 @@ const Details = (props) => {
       <p>{business.address}</p>
       <p>{business.hours}</p>
       <p>{business.description}</p>
-      <ListingsMap address={business.address}/>
+      <DetailsMap address={business.address}/>
     </div>
   )
 }

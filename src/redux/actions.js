@@ -1,11 +1,11 @@
-const fetchBusinesses = () => {
+const fetchCoords = (url) => {
   return (dispatch) => {
-    fetch('here')
+    fetch(url)
     .then(res => res.json())
     .then(response => {
       const action = {
-        type: 'FETCH_BUSINESSES',
-        value: response.Results
+        type: 'FETCH_COORDS',
+         value: response.results[0].geometry.location
       }
       dispatch(action)
     })
@@ -50,4 +50,4 @@ const addBiz = (business) => {
   }
 }
 
-export { fetchBusinesses, logIn, logOut, logInGuest, logOutGuest, deleteBiz, addBiz }
+export { fetchCoords, logIn, logOut, logInGuest, logOutGuest, deleteBiz, addBiz }

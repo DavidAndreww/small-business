@@ -34,7 +34,7 @@ const state = {
 
   ],
   isGuest: false,
-  map: null
+  mapCoords: []
 }
 
 export default state;

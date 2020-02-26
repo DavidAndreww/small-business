@@ -6,33 +6,23 @@ import {
   Marker
 } from "react-google-maps";
 
-class ListingsMap extends React.Component {
-  state = {
-    lat: "",
-    lng: ""
-  };
-
+class DetailsMap extends React.Component {
+  
   componentDidMount = () => {
     const address = `${this.props.address}`;
     const key = "AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI";
     let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${key}`;
 
-    fetch(url)
-      .then(res => res.json())
-      .then(response => {
-        let lat = response.results[0].geometry.location.lat;
-        let lng = response.results[0].geometry.location.lng;
-        this.setState({ lat, lng });
-      });
+    this.props.fetchCoords(url)
   };
 
   Map = () => {
     return (
       <GoogleMap
         defaultZoom={10}
-        defaultCenter={{ lat: this.state.lat, lng: this.state.lng }}
+        defaultCenter={{ lat: this.props.mapCoords.lat, lng: this.props.mapCoords.lng }}
       >
-        <Marker position={{ lat: this.state.lat, lng: this.state.lng }} />
+        <Marker position={{ lat: this.props.mapCoords.lat, lng: this.props.mapCoords.lng }} />
       </GoogleMap>
     );
   };
@@ -53,4 +43,4 @@ class ListingsMap extends React.Component {
   }
 }
 
-export default ListingsMap;
+export default DetailsMap;

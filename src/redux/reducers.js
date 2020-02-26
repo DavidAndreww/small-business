@@ -35,6 +35,14 @@ const listings = (state = [], action) => {
   }
 };
 
-const map = (state = null) => state;
+const mapCoords = (state = [], action) => {
+  switch (action.type) {
+    case "FETCH_COORDS":
+      console.log( action.value )
+      return action.value;
+    default:
+      return state;
+  }
+};
 
-export default combineReducers({ loggedIn, isGuest, listings, map });
+export default combineReducers({ loggedIn, isGuest, listings, mapCoords });
