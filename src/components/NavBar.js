@@ -6,7 +6,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
-import { checkAuth } from '../HelperFunctions';
+import { checkAuth } from "../HelperFunctions";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,6 +23,7 @@ const useStyles = makeStyles(theme => ({
 
 const NavBar = props => {
   const classes = useStyles();
+  console.log(checkAuth())
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -36,12 +37,9 @@ const NavBar = props => {
           <Typography variant="h6" className={classes.title}>
             Austin Small Business
           </Typography>
-          {/* if user logs in or continues as guest, displays LISTINGS BUTTON */}
-          {checkAuth() || !checkAuth() ? (
-            <Link className="link" to="/listings">
-              <Button color="inherit">Listings</Button>
-            </Link>
-          ) : null}
+          <Link className="link" to="/listings">
+            <Button color="inherit">Listings</Button>
+          </Link>
           {/* if user logs in, displays ADD BUTTON */}
           {checkAuth() && (
             <Link className="link" to="/add">
@@ -51,17 +49,14 @@ const NavBar = props => {
           {/* if user logs in, dispays LOGOUT BUTTON */}
           {checkAuth() ? (
             <Link className="link" to="/">
-              <Button color="inherit">
-                Logout
-              </Button>
+              <Button color="inherit">Logout</Button>
             </Link>
-          ) : <Link className="link" to="/">
-              <Button color="inherit">
-                Log In
-              </Button>
-            </Link>}
+          ) : (
+            <Link className="link" to="/">
+              <Button color="inherit">Log In</Button>
+            </Link>
+          )}
           {/* if user logs in as guest, displays LOG IN BUTTON */}
-          
         </Toolbar>
       </AppBar>
     </div>

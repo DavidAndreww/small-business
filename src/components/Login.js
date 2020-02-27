@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 const Login = props => {
   const validateAuth = e => {
     e.preventDefault();
-    document.cookie = `loggedIn=true;max-age=30*1000`;
+    document.cookie = `loggedIn=true`;
     props.history.push("/listings");
   };
 
