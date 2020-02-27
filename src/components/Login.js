@@ -2,14 +2,17 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
 
 const Login = props => {
-
   const validateAuth = e => {
     e.preventDefault();
     document.cookie = `loggedIn=true;max-age=30*1000`;
-    window.location.replace('/listings')
+    props.history.push("/listings");
+  };
+
+  const validateGuest = () => {
+    document.cookie = ''
+    props.history.push("/listings");
   };
 
   return (
@@ -31,28 +34,14 @@ const Login = props => {
           autoComplete="current-password"
         />
         <br />
-        <Button
-          color="primary"
-          variant="contained"
-          type="submit"
-          // onClick={()=>props.logIn()}
-          // onClick={()=>validateAuth()}
-        >
-          {/* <Link className="link" to="/listings"> */}
-            Login
-          {/* </Link> */}
+        <Button color="primary" variant="contained" type="submit">
+          Login
         </Button>
         <Typography>- OR -</Typography>
       </form>
-      <Link className="link" to="/listings">
-        <Button
-          color="primary"
-          variant="contained"
-          onClick={() => props.logInGuest()}
-        >
-          Continue as Guest
-        </Button>
-      </Link>
+      <Button color="primary" variant="contained" onClick={validateGuest}>
+        Continue as Guest
+      </Button>
     </div>
   );
 };

@@ -1,15 +1,12 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router";
-import cookie from "cookie";
+// import cookie from "cookie";
 import Login from "./containers/Login";
 import Listings from "./containers/Listings";
 import AddBusiness from './containers/AddBusiness';
 import Details from "./containers/Details";
+import { checkAuth } from './HelperFunctions';
 
-const checkAuth = () => {
-  const cookies = cookie.parse(document.cookie)
-  return cookies['loggedIn'] ? true : false
-}
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
   return (

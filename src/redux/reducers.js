@@ -38,7 +38,7 @@ const listings = (state = [], action) => {
 const mapCoords = (state = [], action) => {
   switch (action.type) {
     case "FETCH_COORDS":
-      console.log( action.value )
+      console.log(action.value);
       return action.value;
     default:
       return state;

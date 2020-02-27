@@ -10,18 +10,19 @@ import {
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { Link } from "react-router-dom";
+import { checkAuth } from '../HelperFunctions';
 
 class Listings extends React.Component {
   // if logged in with username and password, changes state to logged in to allow for proper links in navbar to be displayed
   componentDidMount() {
-    if (this.props.isGuest === false) {
-      this.props.logIn();
-    }
-    if (this.props.isGuest === true) {
-      // why won't this delete cookie? user can log in, log out, log in as guest, and still have acceess to 'add' path. por que?
-      delete document.cookie;
-      // document.cookie = ''
-    }
+    // if (this.props.isGuest === false) {
+      // this.props.logIn();
+    // if (this.props.isGuest === true) {
+    //   // why won't this delete cookie? user can log in, log out, log in as guest, and still have acceess to 'add' path. por que?
+    //   console.log(this.props.isGuest)
+    //   delete document.cookie;
+    //   document.cookie = 'loggedIn='
+    // }
   }
 
   render() {
@@ -43,7 +44,7 @@ class Listings extends React.Component {
                 <b>Address</b>
               </TableCell>
               {/*if loggedIn, display delete button COLUMN */}
-              {this.props.loggedIn ? (
+              {checkAuth() ? (
                 <TableCell>
                   <b>Delete</b>
                 </TableCell>
@@ -60,7 +61,7 @@ class Listings extends React.Component {
                 <TableCell>{obj.hours}</TableCell>
                 <TableCell>{obj.address}</TableCell>
                 {/* if loggedIn, display delete BUTTON for each business */}
-                {this.props.loggedIn ? (
+                {checkAuth() ? (
                   <TableCell>
                     <Button>
                       <DeleteIcon
