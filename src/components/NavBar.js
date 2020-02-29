@@ -24,11 +24,12 @@ const useStyles = makeStyles(theme => ({
 const NavBar = props => {
   const classes = useStyles();
   console.log(checkAuth())
-  // if(window.location.pathname + window.location.search === '/listings' && checkAuth()){
-  //   console.log('true')
-  // } else {
-  //   console.log('false')
-  // }
+
+  const userLogout = () => {
+    document.cookie = 'null'
+    window.location.replace('/')
+  };
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -54,7 +55,7 @@ const NavBar = props => {
           {/* if user logs in, dispays LOGOUT BUTTON */}
           {checkAuth() ? (
             <Link className="link" to="/">
-              <Button color="inherit" OnClick={document.cookie=""}>Logout</Button>
+              <Button color="inherit" OnClick={userLogout}>Logout</Button>
             </Link>
           ) : (
             <Link className="link" to="/">

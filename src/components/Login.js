@@ -6,12 +6,13 @@ import Typography from "@material-ui/core/Typography";
 const Login = props => {
   const validateAuth = e => {
     e.preventDefault();
-    document.cookie = `loggedIn=true;max-age=10*1000`;
+    document.cookie = `loggedIn=true;max-age=30*1000`;
     window.location.replace('/listings')
+    // props.history.push('/listings')
   };
 
   const validateGuest = () => {
-    document.cookie = 'loggedOut'
+    document.cookie = 'guest'
     // props.history.push("/listings");
     window.location.replace('/listings')
   };
