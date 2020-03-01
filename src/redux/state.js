@@ -33,7 +33,6 @@ const state = {
     }
 
   ],
-  isGuest: false,
   mapCoords: []
 }
 

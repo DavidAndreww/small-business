@@ -11,7 +11,7 @@ import { checkAuth } from "../HelperFunctions";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    marginBottom: "5em"
+    marginBottom: "2em"
   },
   menuButton: {
     marginRight: theme.spacing(2)
@@ -52,17 +52,16 @@ const NavBar = props => {
               <Button color="inherit">Add</Button>
             </Link>
           )}
-          {/* if user logs in, dispays LOGOUT BUTTON */}
+          {/* renders LOG IN/OUT button text depending on checkAuth() return */}
           {checkAuth() ? (
             <Link className="link" to="/">
-              <Button color="inherit" OnClick={userLogout}>Logout</Button>
+              <Button color="inherit" onClick={userLogout}>Log out</Button>
             </Link>
           ) : (
             <Link className="link" to="/">
               <Button color="inherit">Log In</Button>
             </Link>
           )}
-          {/* if user logs in as guest, displays LOG IN BUTTON */}
         </Toolbar>
       </AppBar>
     </div>

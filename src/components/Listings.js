@@ -31,11 +31,11 @@ const Listings = (props) => {
               <TableCell>
                 <b>Address</b>
               </TableCell>
-              {checkAuth() ? (
+              {checkAuth() && (
                 <TableCell>
                   <b>Delete</b>
                 </TableCell>
-              ) : null}
+              )}
             </TableRow>
           </TableHead>
           <TableBody>
