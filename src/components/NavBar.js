@@ -26,7 +26,7 @@ const NavBar = props => {
   console.log(checkAuth())
 
   const userLogout = () => {
-    document.cookie = 'null'
+    document.cookie = 'loggedIn='
     window.location.replace('/')
   };
 
