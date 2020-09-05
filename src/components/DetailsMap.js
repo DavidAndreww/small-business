@@ -10,7 +10,7 @@ class DetailsMap extends React.Component {
   
   componentDidMount = () => {
     const address = `${this.props.address}`;
-    const key = "AIzaSyCC3EccEyE6Bq7qyzzoX7RmTUc5UVN4ZOI";
+    const key = "AIzaSyA5lmQxtwS0DRTD6UQH5wFwA7Eyyd7hFKY";
     let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${key}`;
     this.props.fetchCoords(url)
   };
